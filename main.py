@@ -10,6 +10,7 @@ from markitdown import MarkItDown
 import os
 import tempfile
 from prompt_manager import prompt_manager
+from decouple import config
 
 app = FastAPI(title="Resume Details Extractor API")
 
