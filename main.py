@@ -22,7 +22,8 @@ RESUME_DETAILS_FORMATTER = (
 )
 # RESUME_DETAILS_FORMATTER = "Your job is to format the given context in valid JSON structure without changing any context."
 
-GOOGLE_API_KEY = "AIzaSyDgzJX7XWg5lC5XiWVKvOfp1Et1dX82I6Q"
+# GOOGLE_API_KEY = "AIzaSyDgzJX7XWg5lC5XiWVKvOfp1Et1dX82I6Q"
+GOOGLE_API_KEY = config("GEMINI_API_KEY")
 client = genai.Client(api_key=GOOGLE_API_KEY)
 
 def docx_to_text_markitdown(docx_path):
