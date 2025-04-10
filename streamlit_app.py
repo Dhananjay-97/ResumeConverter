@@ -9,9 +9,8 @@ uploaded_file = st.file_uploader("Upload your Resume (PDF or DOCX)", type=["pdf"
 if uploaded_file is not None:
     if st.button("Extract Details"):
         files = {"file": uploaded_file}
-        api_url = "https://resumeconverter.onrender.com/8080/extract_resume_details/"
-        # api_url = "http://localhost:8080/extract_resume_details/"
-
+        api_url = "https://resumeconverter.onrender.com/extract_resume_details/"
+        
         try:
             response = requests.post(api_url, files=files)
             response.raise_for_status()
