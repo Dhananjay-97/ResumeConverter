@@ -20,7 +20,7 @@ if uploaded_file is not None:
     if st.button("Extract Details"):
         files = {"file": uploaded_file}
         logger.info(f"User uploaded file: {uploaded_file.name}. Sending request to API.")
-        api_url = "https://resumeconverter-1.onrender/extract_resume_details/"
+        api_url = "https://resumestandardizer-backend.onrender.com/extract_resume_details/"
 
         try:
             response = requests.post(api_url, files=files)
