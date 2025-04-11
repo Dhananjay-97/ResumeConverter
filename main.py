@@ -66,7 +66,6 @@ async def extract_resume_details(file: UploadFile = File(...)):
             raise HTTPException(
                 status_code=400,
                 detail="Unsupported file format. Please upload a PDF or DOCX file.",
-                headers={"Content-Type": "application/json"}
             )
 
         # Approach 1: Schema-Enforced structured JSON
@@ -114,7 +113,6 @@ async def extract_resume_details(file: UploadFile = File(...)):
                 "schema_structured": schema_structured,
                 "formatter_structured": formatter_structured,
             },
-            headers={"Content-Type": "application/json"}
             status_code=200,
         )
         logger.info(f"Resume details extraction and JSON response completed successfully for file: {file.filename}")
