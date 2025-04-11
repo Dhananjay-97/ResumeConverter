@@ -1,5 +1,8 @@
 from google.genai import types
+import logging
 
+# Get logger for this module
+logger = logging.getLogger(__name__)
 
 class PromptManager:
     def __init__(self):
@@ -411,9 +414,11 @@ class PromptManager:
         """
 
     def get_resume_extractor_prompt(self) -> types.Part:
+        logger.info("Returning resume extractor prompt.")
         return types.Part.from_text(text=self._resume_extractor_prompt_text)
 
     def get_resume_formatter_prompt(self) -> types.Part:
+        logger.info("Returning resume formatter prompt.")
         return types.Part.from_text(text=self._resume_formatter_prompt_text)
 
 # Create a single instance of the PromptManager (Singleton pattern if needed)
